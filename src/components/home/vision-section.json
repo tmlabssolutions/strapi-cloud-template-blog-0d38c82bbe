@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_vision_sections",
+  "info": {
+    "displayName": "VisionSection"
+  },
+  "options": {},
+  "attributes": {
+    "fallbackImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "videoLink": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "home.vision-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

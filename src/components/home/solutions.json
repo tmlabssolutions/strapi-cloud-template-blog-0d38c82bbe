@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_home_solutions",
+  "info": {
+    "displayName": "solutions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "elements.title",
+      "repeatable": false
+    },
+    "items": {
+      "type": "component",
+      "component": "home.solution-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

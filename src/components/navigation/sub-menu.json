@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_navigation_sub_menus",
+  "info": {
+    "displayName": "SubMenu"
+  },
+  "options": {},
+  "attributes": {
+    "optionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "mainOptions": {
+      "type": "component",
+      "component": "navigation.sub-menu-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

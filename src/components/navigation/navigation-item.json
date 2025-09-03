@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_navigation_navigation_items",
+  "info": {
+    "displayName": "NavigationItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "elements.title",
+      "repeatable": false
+    },
+    "link": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "component": "navigation.sub-menu",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

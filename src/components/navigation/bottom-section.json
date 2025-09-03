@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_navigation_bottom_sections",
+  "info": {
+    "displayName": "BottomSection"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "elements.logo",
+      "repeatable": false
+    },
+    "navigationMenu": {
+      "type": "component",
+      "component": "navigation.navigation-item",
+      "repeatable": true
+    },
+    "ctaButtons": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true,
+      "max": 2
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_ai_assitants",
+  "info": {
+    "displayName": "AiAssitant"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "component",
+      "component": "elements.title",
+      "repeatable": false
+    },
+    "link": {
+      "type": "string",
+      "default": "#",
+      "required": false
+    }
+  },
+  "config": {}
+}

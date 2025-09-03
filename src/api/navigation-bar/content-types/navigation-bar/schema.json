@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigation_bars",
+  "info": {
+    "singularName": "navigation-bar",
+    "pluralName": "navigation-bars",
+    "displayName": "NavigationBar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topSection": {
+      "type": "component",
+      "component": "navigation.top-section",
+      "repeatable": false
+    },
+    "bottomSection": {
+      "type": "component",
+      "component": "navigation.bottom-section",
+      "repeatable": false
+    }
+  }
+}

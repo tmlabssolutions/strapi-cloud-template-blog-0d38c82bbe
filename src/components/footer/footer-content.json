@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_footer_footer_contents",
+  "info": {
+    "displayName": "FooterContent"
+  },
+  "options": {},
+  "attributes": {
+    "socials": {
+      "type": "component",
+      "component": "footer.socials-item",
+      "repeatable": true
+    },
+    "contents": {
+      "type": "component",
+      "component": "footer.footer-details",
+      "repeatable": false
+    },
+    "copyrightNotice": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_footer_footer_options",
+  "info": {
+    "displayName": "FooterOption"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "elements.title",
+      "repeatable": false
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

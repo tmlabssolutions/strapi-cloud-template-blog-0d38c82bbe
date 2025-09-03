@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_quick_actions",
+  "info": {
+    "displayName": "QuickActions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "component": "home.action-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

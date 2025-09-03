@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_navigation_sub_menu_items",
+  "info": {
+    "displayName": "SubMenuItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "others": {
+      "type": "component",
+      "component": "navigation.sub-menu-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

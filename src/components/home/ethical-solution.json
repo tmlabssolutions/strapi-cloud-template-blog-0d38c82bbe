@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_ethical_solutions",
+  "info": {
+    "displayName": "EthicalSolution"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "elements.title",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "component": "home.ethical-solution-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_navigation_top_sections",
+  "info": {
+    "displayName": "TopSection"
+  },
+  "options": {},
+  "attributes": {
+    "contacts": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

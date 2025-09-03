@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_vision_items",
+  "info": {
+    "displayName": "VisionItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "elements.title",
+      "repeatable": false
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
