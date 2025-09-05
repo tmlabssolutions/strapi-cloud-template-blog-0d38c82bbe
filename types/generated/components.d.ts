@@ -212,7 +212,7 @@ export interface HomeVisionItem extends Struct.ComponentSchema {
     displayName: 'VisionItem';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.Component<'elements.title', false>;
   };
 }
