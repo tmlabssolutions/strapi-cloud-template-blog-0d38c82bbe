@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "reports_pages",
+  "info": {
+    "singularName": "reports-page",
+    "pluralName": "reports-pages",
+    "displayName": "ReportsPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tabs": {
+      "type": "component",
+      "component": "reports.report-tabs",
+      "repeatable": true
+    }
+  }
+}

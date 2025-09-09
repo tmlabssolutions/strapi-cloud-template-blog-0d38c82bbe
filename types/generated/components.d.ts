@@ -313,6 +313,28 @@ export interface NavigationTopSection extends Struct.ComponentSchema {
   };
 }
 
+export interface ReportsCard extends Struct.ComponentSchema {
+  collectionName: 'components_reports_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ReportsReportTabs extends Struct.ComponentSchema {
+  collectionName: 'components_reports_report_tabs';
+  info: {
+    displayName: 'Report Tab';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'reports.card', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -402,6 +424,8 @@ declare module '@strapi/strapi' {
       'navigation.sub-menu-item': NavigationSubMenuItem;
       'navigation.sub-menu-link': NavigationSubMenuLink;
       'navigation.top-section': NavigationTopSection;
+      'reports.card': ReportsCard;
+      'reports.report-tabs': ReportsReportTabs;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

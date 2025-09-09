@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_reports_report_tabs",
+  "info": {
+    "displayName": "Report Tab"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "reports.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
