@@ -634,6 +634,36 @@ export interface ApiNavigationBarNavigationBar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPersonalBankingPersonalBanking
+  extends Struct.SingleTypeSchema {
+  collectionName: 'personal_bankings';
+  info: {
+    displayName: 'personal-banking';
+    pluralName: 'personal-bankings';
+    singularName: 'personal-banking';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::personal-banking.personal-banking'
+    > &
+      Schema.Attribute.Private;
+    products: Schema.Attribute.Component<'shared.product-section', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiReportsPageReportsPage extends Struct.SingleTypeSchema {
   collectionName: 'reports_pages';
   info: {
@@ -1179,6 +1209,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
+      'api::personal-banking.personal-banking': ApiPersonalBankingPersonalBanking;
       'api::reports-page.reports-page': ApiReportsPageReportsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

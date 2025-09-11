@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "personal_bankings",
+  "info": {
+    "singularName": "personal-banking",
+    "pluralName": "personal-bankings",
+    "displayName": "personal-banking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "products": {
+      "type": "component",
+      "component": "shared.product-section",
+      "repeatable": true
+    },
+    "header": {
+      "type": "component",
+      "component": "header.header-content",
+      "repeatable": false
+    }
+  }
+}

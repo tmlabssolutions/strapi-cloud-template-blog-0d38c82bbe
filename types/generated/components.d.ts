@@ -346,6 +346,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedProductSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_product_sections';
+  info: {
+    displayName: 'product-section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    header: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -427,6 +439,7 @@ declare module '@strapi/strapi' {
       'reports.card': ReportsCard;
       'reports.report-tabs': ReportsReportTabs;
       'shared.media': SharedMedia;
+      'shared.product-section': SharedProductSection;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
