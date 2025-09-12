@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contact_us_page_quick_actions",
+  "info": {
+    "displayName": "QuickActions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "contact-us-page.quick-action-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

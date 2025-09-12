@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_about_perks",
+  "info": {
+    "displayName": "perks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "description",
+      "enum": [
+        "description",
+        "list"
+      ]
+    },
+    "list": {
+      "type": "component",
+      "component": "about.listitem",
+      "repeatable": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

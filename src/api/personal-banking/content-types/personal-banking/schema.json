@@ -4,14 +4,14 @@
   "info": {
     "singularName": "personal-banking",
     "pluralName": "personal-bankings",
-    "displayName": "personal-banking"
+    "displayName": "PersonalBankingPage"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "products": {
+    "description": {
       "type": "component",
       "component": "shared.product-section",
       "repeatable": true

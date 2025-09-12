@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_statscards",
+  "info": {
+    "displayName": "statscard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "backgroundcolor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_media_articlecards",
+  "info": {
+    "displayName": "articlecard"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "default": "News"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

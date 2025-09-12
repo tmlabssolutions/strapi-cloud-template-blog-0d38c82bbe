@@ -1,5 +1,115 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutListitem extends Struct.ComponentSchema {
+  collectionName: 'components_about_listitems';
+  info: {
+    displayName: 'listitem';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface AboutPerks extends Struct.ComponentSchema {
+  collectionName: 'components_about_perks';
+  info: {
+    displayName: 'perks';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    list: Schema.Attribute.Component<'about.listitem', true>;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['description', 'list']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'description'>;
+  };
+}
+
+export interface AboutStatscard extends Struct.ComponentSchema {
+  collectionName: 'components_about_statscards';
+  info: {
+    displayName: 'statscard';
+  };
+  attributes: {
+    backgroundcolor: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactUsPageContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_page_contact_forms';
+  info: {
+    displayName: 'ContactForm';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactUsPageLocationCard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_page_location_cards';
+  info: {
+    displayName: 'LocationCard';
+  };
+  attributes: {
+    socialitems: Schema.Attribute.Component<'footer.socials-item', true>;
+    subtext: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactUsPageLocationSection extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_page_location_sections';
+  info: {
+    displayName: 'LocationSection';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    locationcards: Schema.Attribute.Component<
+      'contact-us-page.location-card',
+      true
+    >;
+    mapurl: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.80108376929!2d7.4658619682806036!3d9.07171879562038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf247c5781%3A0x2cd31e9285687a70!2sJaiz%20Bank%20Plc!5e0!3m2!1sen!2sng!4v1724000000000!5m2!1sen!2sng'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactUsPageQuickActionCard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_page_quick_action_cards';
+  info: {
+    displayName: 'QuickActionCard';
+  };
+  attributes: {
+    buttonimage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    buttontext: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface ContactUsPageQuickActions extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_page_quick_actions';
+  info: {
+    displayName: 'QuickActions';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<
+      'contact-us-page.quick-action-card',
+      true
+    >;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
@@ -229,6 +339,20 @@ export interface HomeVisionSection extends Struct.ComponentSchema {
   };
 }
 
+export interface MediaArticlecard extends Struct.ComponentSchema {
+  collectionName: 'components_media_articlecards';
+  info: {
+    displayName: 'articlecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    label: Schema.Attribute.String & Schema.Attribute.DefaultTo<'News'>;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.String;
+  };
+}
+
 export interface NavigationBottomSection extends Struct.ComponentSchema {
   collectionName: 'components_navigation_bottom_sections';
   info: {
@@ -349,12 +473,16 @@ export interface SharedMedia extends Struct.ComponentSchema {
 export interface SharedProductSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_product_sections';
   info: {
-    displayName: 'product-section';
+    displayName: 'descriptioncards';
   };
   attributes: {
     description: Schema.Attribute.Text;
     header: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    list: Schema.Attribute.Component<'shared.text', true>;
+    type: Schema.Attribute.Enumeration<['text', 'list']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'text'>;
   };
 }
 
@@ -409,9 +537,27 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_texts';
+  info: {
+    displayName: 'text';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.listitem': AboutListitem;
+      'about.perks': AboutPerks;
+      'about.statscard': AboutStatscard;
+      'contact-us-page.contact-form': ContactUsPageContactForm;
+      'contact-us-page.location-card': ContactUsPageLocationCard;
+      'contact-us-page.location-section': ContactUsPageLocationSection;
+      'contact-us-page.quick-action-card': ContactUsPageQuickActionCard;
+      'contact-us-page.quick-actions': ContactUsPageQuickActions;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'elements.title': ElementsTitle;
@@ -430,6 +576,7 @@ declare module '@strapi/strapi' {
       'home.solutions': HomeSolutions;
       'home.vision-item': HomeVisionItem;
       'home.vision-section': HomeVisionSection;
+      'media.articlecard': MediaArticlecard;
       'navigation.bottom-section': NavigationBottomSection;
       'navigation.navigation-item': NavigationNavigationItem;
       'navigation.sub-menu': NavigationSubMenu;
@@ -444,6 +591,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.text': SharedText;
     }
   }
 }

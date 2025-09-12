@@ -385,17 +385,17 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Component<'shared.product-section', true>;
+    header: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
+    perks: Schema.Attribute.Component<'about.perks', true>;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    stats: Schema.Attribute.Component<'about.statscard', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -474,6 +474,36 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBusinessBankingBusinessBanking
+  extends Struct.SingleTypeSchema {
+  collectionName: 'business_bankings';
+  info: {
+    displayName: 'BusinessBanking';
+    pluralName: 'business-bankings';
+    singularName: 'business-banking';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Component<'shared.product-section', true>;
+    header: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::business-banking.business-banking'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -500,6 +530,76 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_pages';
+  info: {
+    displayName: 'ContactPage';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactform: Schema.Attribute.Component<
+      'contact-us-page.contact-form',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.Component<
+      'contact-us-page.location-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    quickactions: Schema.Attribute.Component<
+      'contact-us-page.quick-actions',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDigitalBankingDigitalBanking
+  extends Struct.SingleTypeSchema {
+  collectionName: 'digital_bankings';
+  info: {
+    displayName: 'DigitalBanking';
+    pluralName: 'digital-bankings';
+    singularName: 'digital-banking';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Component<'shared.product-section', true>;
+    header: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::digital-banking.digital-banking'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -602,6 +702,35 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMediaPageMediaPage extends Struct.SingleTypeSchema {
+  collectionName: 'media_pages';
+  info: {
+    displayName: 'MediaPage';
+    pluralName: 'media-pages';
+    singularName: 'media-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    articles: Schema.Attribute.Component<'media.articlecard', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::media-page.media-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavigationBarNavigationBar extends Struct.SingleTypeSchema {
   collectionName: 'navigation_bars';
   info: {
@@ -638,7 +767,7 @@ export interface ApiPersonalBankingPersonalBanking
   extends Struct.SingleTypeSchema {
   collectionName: 'personal_bankings';
   info: {
-    displayName: 'personal-banking';
+    displayName: 'PersonalBankingPage';
     pluralName: 'personal-bankings';
     singularName: 'personal-banking';
   };
@@ -649,6 +778,7 @@ export interface ApiPersonalBankingPersonalBanking
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Component<'shared.product-section', true>;
     header: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -656,7 +786,6 @@ export interface ApiPersonalBankingPersonalBanking
       'api::personal-banking.personal-banking'
     > &
       Schema.Attribute.Private;
-    products: Schema.Attribute.Component<'shared.product-section', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1204,10 +1333,14 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::business-banking.business-banking': ApiBusinessBankingBusinessBanking;
       'api::category.category': ApiCategoryCategory;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::digital-banking.digital-banking': ApiDigitalBankingDigitalBanking;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::media-page.media-page': ApiMediaPageMediaPage;
       'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
       'api::personal-banking.personal-banking': ApiPersonalBankingPersonalBanking;
       'api::reports-page.reports-page': ApiReportsPageReportsPage;

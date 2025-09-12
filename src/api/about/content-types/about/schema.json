@@ -12,12 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "header": {
+      "type": "component",
+      "component": "header.header-content",
+      "repeatable": false
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "stats": {
+      "type": "component",
+      "component": "about.statscard",
+      "repeatable": true
+    },
+    "perks": {
+      "type": "component",
+      "component": "about.perks",
+      "repeatable": true
+    },
+    "description": {
+      "type": "component",
+      "component": "shared.product-section",
+      "repeatable": true
     }
   }
 }

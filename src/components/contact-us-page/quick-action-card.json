@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_contact_us_page_quick_action_cards",
+  "info": {
+    "displayName": "QuickActionCard"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "buttontext": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "buttonimage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

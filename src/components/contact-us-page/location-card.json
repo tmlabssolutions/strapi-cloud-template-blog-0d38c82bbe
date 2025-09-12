@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contact_us_page_location_cards",
+  "info": {
+    "displayName": "LocationCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtext": {
+      "type": "string"
+    },
+    "socialitems": {
+      "type": "component",
+      "component": "footer.socials-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

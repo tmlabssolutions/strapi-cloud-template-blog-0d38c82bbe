@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_listitems",
+  "info": {
+    "displayName": "listitem"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

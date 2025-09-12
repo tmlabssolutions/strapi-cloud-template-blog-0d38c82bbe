@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_contact_us_page_location_sections",
+  "info": {
+    "displayName": "LocationSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "locationcards": {
+      "type": "component",
+      "component": "contact-us-page.location-card",
+      "repeatable": true
+    },
+    "mapurl": {
+      "type": "text",
+      "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.80108376929!2d7.4658619682806036!3d9.07171879562038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf247c5781%3A0x2cd31e9285687a70!2sJaiz%20Bank%20Plc!5e0!3m2!1sen!2sng!4v1724000000000!5m2!1sen!2sng",
+      "required": true
+    }
+  },
+  "config": {}
+}

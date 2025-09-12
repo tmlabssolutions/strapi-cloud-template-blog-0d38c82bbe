@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "media_pages",
+  "info": {
+    "singularName": "media-page",
+    "pluralName": "media-pages",
+    "displayName": "MediaPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "header.header-content",
+      "repeatable": false
+    },
+    "articles": {
+      "type": "component",
+      "component": "media.articlecard",
+      "repeatable": true
+    }
+  }
+}
