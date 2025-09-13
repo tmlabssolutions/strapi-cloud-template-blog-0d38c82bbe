@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_leadership_leadershiptabs",
+  "info": {
+    "displayName": "leadershiptab"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "leadership.leadershipcard",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

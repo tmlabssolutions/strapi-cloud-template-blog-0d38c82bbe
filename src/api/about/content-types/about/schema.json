@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "header": {
+    "hero": {
       "type": "component",
       "component": "header.header-content",
       "repeatable": false
@@ -27,7 +27,7 @@
       "component": "about.perks",
       "repeatable": true
     },
-    "description": {
+    "featureCards": {
       "type": "component",
       "component": "shared.product-section",
       "repeatable": true

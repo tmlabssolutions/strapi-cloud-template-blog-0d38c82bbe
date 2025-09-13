@@ -388,8 +388,8 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Component<'shared.product-section', true>;
-    header: Schema.Attribute.Component<'header.header-content', false>;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
@@ -489,8 +489,8 @@ export interface ApiBusinessBankingBusinessBanking
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Component<'shared.product-section', true>;
-    header: Schema.Attribute.Component<'header.header-content', false>;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -554,7 +554,7 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    header: Schema.Attribute.Component<'header.header-content', false>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -591,8 +591,8 @@ export interface ApiDigitalBankingDigitalBanking
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Component<'shared.product-section', true>;
-    header: Schema.Attribute.Component<'header.header-content', false>;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -600,6 +600,37 @@ export interface ApiDigitalBankingDigitalBanking
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeaturePageFeaturePage extends Struct.CollectionTypeSchema {
+  collectionName: 'feature_pages';
+  info: {
+    displayName: 'featurepage';
+    pluralName: 'feature-pages';
+    singularName: 'feature-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-page.feature-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -685,7 +716,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ethicalSolution: Schema.Attribute.Component<'home.ethical-solution', false>;
-    header: Schema.Attribute.Component<'header.header-content', true>;
+    hero: Schema.Attribute.Component<'header.header-content', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -699,6 +730,40 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     vision: Schema.Attribute.Component<'home.vision-section', false>;
+  };
+}
+
+export interface ApiLeadershipPageLeadershipPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'leadership_pages';
+  info: {
+    displayName: 'LeadershipPage';
+    pluralName: 'leadership-pages';
+    singularName: 'leadership-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    LeadershipPageTab: Schema.Attribute.Component<
+      'leadership.leadershiptab',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::leadership-page.leadership-page'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Leadership'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -717,7 +782,7 @@ export interface ApiMediaPageMediaPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    header: Schema.Attribute.Component<'header.header-content', false>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -778,8 +843,8 @@ export interface ApiPersonalBankingPersonalBanking
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Component<'shared.product-section', true>;
-    header: Schema.Attribute.Component<'header.header-content', false>;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1337,9 +1402,11 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::digital-banking.digital-banking': ApiDigitalBankingDigitalBanking;
+      'api::feature-page.feature-page': ApiFeaturePageFeaturePage;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::leadership-page.leadership-page': ApiLeadershipPageLeadershipPage;
       'api::media-page.media-page': ApiMediaPageMediaPage;
       'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
       'api::personal-banking.personal-banking': ApiPersonalBankingPersonalBanking;

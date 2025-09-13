@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "leadership_pages",
+  "info": {
+    "singularName": "leadership-page",
+    "pluralName": "leadership-pages",
+    "displayName": "LeadershipPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "LeadershipPageTab": {
+      "type": "component",
+      "component": "leadership.leadershiptab",
+      "repeatable": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Leadership"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

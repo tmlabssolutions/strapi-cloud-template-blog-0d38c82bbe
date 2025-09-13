@@ -11,12 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "description": {
+    "featureCards": {
       "type": "component",
       "component": "shared.product-section",
       "repeatable": true
     },
-    "header": {
+    "hero": {
       "type": "component",
       "component": "header.header-content",
       "repeatable": false

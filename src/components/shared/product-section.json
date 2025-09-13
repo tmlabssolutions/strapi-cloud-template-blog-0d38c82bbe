@@ -34,6 +34,11 @@
       "type": "component",
       "component": "shared.text",
       "repeatable": true
+    },
+    "accordion": {
+      "type": "component",
+      "component": "shared.accordion",
+      "repeatable": true
     }
   },
   "config": {}

@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "header": {
+    "hero": {
       "type": "component",
       "component": "header.header-content",
       "repeatable": false

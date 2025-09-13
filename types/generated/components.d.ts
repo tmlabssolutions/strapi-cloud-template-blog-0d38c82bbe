@@ -339,6 +339,30 @@ export interface HomeVisionSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LeadershipLeadershipcard extends Struct.ComponentSchema {
+  collectionName: 'components_leadership_leadershipcards';
+  info: {
+    displayName: 'leadershipcard';
+  };
+  attributes: {
+    about: Schema.Attribute.Component<'shared.text', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+    position: Schema.Attribute.String;
+  };
+}
+
+export interface LeadershipLeadershiptab extends Struct.ComponentSchema {
+  collectionName: 'components_leadership_leadershiptabs';
+  info: {
+    displayName: 'leadershiptab';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'leadership.leadershipcard', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface MediaArticlecard extends Struct.ComponentSchema {
   collectionName: 'components_media_articlecards';
   info: {
@@ -459,6 +483,17 @@ export interface ReportsReportTabs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAccordion extends Struct.ComponentSchema {
+  collectionName: 'components_shared_accordions';
+  info: {
+    displayName: 'accordion';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -476,6 +511,7 @@ export interface SharedProductSection extends Struct.ComponentSchema {
     displayName: 'descriptioncards';
   };
   attributes: {
+    accordion: Schema.Attribute.Component<'shared.accordion', true>;
     description: Schema.Attribute.Text;
     header: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -576,6 +612,8 @@ declare module '@strapi/strapi' {
       'home.solutions': HomeSolutions;
       'home.vision-item': HomeVisionItem;
       'home.vision-section': HomeVisionSection;
+      'leadership.leadershipcard': LeadershipLeadershipcard;
+      'leadership.leadershiptab': LeadershipLeadershiptab;
       'media.articlecard': MediaArticlecard;
       'navigation.bottom-section': NavigationBottomSection;
       'navigation.navigation-item': NavigationNavigationItem;
@@ -585,6 +623,7 @@ declare module '@strapi/strapi' {
       'navigation.top-section': NavigationTopSection;
       'reports.card': ReportsCard;
       'reports.report-tabs': ReportsReportTabs;
+      'shared.accordion': SharedAccordion;
       'shared.media': SharedMedia;
       'shared.product-section': SharedProductSection;
       'shared.quote': SharedQuote;

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_leadership_leadershipcards",
+  "info": {
+    "displayName": "leadershipcard"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "about": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
