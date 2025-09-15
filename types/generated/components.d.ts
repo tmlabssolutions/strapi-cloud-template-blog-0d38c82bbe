@@ -223,7 +223,7 @@ export interface HeaderHeaderContent extends Struct.ComponentSchema {
   };
   attributes: {
     buttontext: Schema.Attribute.String;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     fullGradient: Schema.Attribute.Boolean;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
