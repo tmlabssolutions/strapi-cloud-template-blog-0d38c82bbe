@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personal_bank_pages",
+  "info": {
+    "singularName": "personal-bank-page",
+    "pluralName": "personal-bank-pages",
+    "displayName": "personal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featureCards": {
+      "type": "component",
+      "component": "shared.product-section",
+      "repeatable": true
+    },
+    "accordion": {
+      "type": "component",
+      "component": "shared.accordion",
+      "repeatable": true
+    }
+  }
+}

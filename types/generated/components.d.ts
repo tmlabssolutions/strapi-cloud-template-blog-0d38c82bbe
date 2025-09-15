@@ -490,7 +490,7 @@ export interface SharedAccordion extends Struct.ComponentSchema {
     displayName: 'accordion';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
   };
 }

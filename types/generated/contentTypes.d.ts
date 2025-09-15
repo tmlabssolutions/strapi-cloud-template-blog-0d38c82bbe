@@ -504,6 +504,37 @@ export interface ApiBusinessBankingBusinessBanking
   };
 }
 
+export interface ApiBusinessBusiness extends Struct.CollectionTypeSchema {
+  collectionName: 'businesses';
+  info: {
+    displayName: 'business';
+    pluralName: 'businesses';
+    singularName: 'business';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::business.business'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -600,6 +631,37 @@ export interface ApiDigitalBankingDigitalBanking
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDigitalDigital extends Struct.CollectionTypeSchema {
+  collectionName: 'digitals';
+  info: {
+    displayName: 'digital';
+    pluralName: 'digitals';
+    singularName: 'digital';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::digital.digital'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -828,6 +890,38 @@ export interface ApiNavigationBarNavigationBar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPersonalBankPagePersonalBankPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'personal_bank_pages';
+  info: {
+    displayName: 'personal';
+    pluralName: 'personal-bank-pages';
+    singularName: 'personal-bank-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::personal-bank-page.personal-bank-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPersonalBankingPersonalBanking
   extends Struct.SingleTypeSchema {
   collectionName: 'personal_bankings';
@@ -880,6 +974,38 @@ export interface ApiReportsPageReportsPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     tabs: Schema.Attribute.Component<'reports.report-tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSpecializedFinanceSpecializedFinance
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'specialized_finances';
+  info: {
+    displayName: 'specialized-finance';
+    pluralName: 'specialized-finances';
+    singularName: 'specialized-finance';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::specialized-finance.specialized-finance'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1399,9 +1525,11 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::business-banking.business-banking': ApiBusinessBankingBusinessBanking;
+      'api::business.business': ApiBusinessBusiness;
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::digital-banking.digital-banking': ApiDigitalBankingDigitalBanking;
+      'api::digital.digital': ApiDigitalDigital;
       'api::feature-page.feature-page': ApiFeaturePageFeaturePage;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
@@ -1409,8 +1537,10 @@ declare module '@strapi/strapi' {
       'api::leadership-page.leadership-page': ApiLeadershipPageLeadershipPage;
       'api::media-page.media-page': ApiMediaPageMediaPage;
       'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
+      'api::personal-bank-page.personal-bank-page': ApiPersonalBankPagePersonalBankPage;
       'api::personal-banking.personal-banking': ApiPersonalBankingPersonalBanking;
       'api::reports-page.reports-page': ApiReportsPageReportsPage;
+      'api::specialized-finance.specialized-finance': ApiSpecializedFinanceSpecializedFinance;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

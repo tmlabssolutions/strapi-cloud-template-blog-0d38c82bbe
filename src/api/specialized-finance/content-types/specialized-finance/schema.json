@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "specialized_finances",
+  "info": {
+    "singularName": "specialized-finance",
+    "pluralName": "specialized-finances",
+    "displayName": "specialized-finance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featureCards": {
+      "type": "component",
+      "component": "shared.product-section",
+      "repeatable": true
+    },
+    "accordion": {
+      "type": "component",
+      "component": "shared.accordion",
+      "repeatable": true
+    }
+  }
+}
