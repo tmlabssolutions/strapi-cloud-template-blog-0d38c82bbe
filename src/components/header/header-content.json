@@ -27,6 +27,9 @@
     },
     "fullGradient": {
       "type": "boolean"
+    },
+    "buttontext": {
+      "type": "string"
     }
   },
   "config": {}
