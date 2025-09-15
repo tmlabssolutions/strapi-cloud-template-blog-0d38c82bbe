@@ -28,6 +28,14 @@
       "type": "component",
       "component": "shared.accordion",
       "repeatable": true
+    },
+    "hero": {
+      "type": "component",
+      "component": "header.header-content",
+      "repeatable": false
+    },
+    "accordionTitile": {
+      "type": "string"
     }
   }
 }

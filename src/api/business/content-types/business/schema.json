@@ -24,10 +24,18 @@
       "component": "shared.product-section",
       "repeatable": true
     },
+    "accordionTitle": {
+      "type": "string"
+    },
     "accordion": {
       "type": "component",
       "component": "shared.accordion",
       "repeatable": true
+    },
+    "hero": {
+      "type": "component",
+      "component": "header.header-content",
+      "repeatable": false
     }
   }
 }

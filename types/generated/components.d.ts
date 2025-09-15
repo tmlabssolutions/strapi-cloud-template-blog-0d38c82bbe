@@ -513,9 +513,11 @@ export interface SharedProductSection extends Struct.ComponentSchema {
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    buttontext: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     header: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
     list: Schema.Attribute.Component<'shared.text', true>;
     type: Schema.Attribute.Enumeration<['text', 'list']> &
       Schema.Attribute.Required &

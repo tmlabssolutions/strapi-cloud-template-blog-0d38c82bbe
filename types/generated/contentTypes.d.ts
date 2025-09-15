@@ -516,10 +516,12 @@ export interface ApiBusinessBusiness extends Struct.CollectionTypeSchema {
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    accordionTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -649,10 +651,12 @@ export interface ApiDigitalDigital extends Struct.CollectionTypeSchema {
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    accordionTitile: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -903,10 +907,12 @@ export interface ApiPersonalBankPagePersonalBankPage
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    accordionTitile: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -993,10 +999,12 @@ export interface ApiSpecializedFinanceSpecializedFinance
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    accordionTitile: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

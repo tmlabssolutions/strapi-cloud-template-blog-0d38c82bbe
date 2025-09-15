@@ -8,6 +8,9 @@
     "header": {
       "type": "string"
     },
+    "buttontext": {
+      "type": "string"
+    },
     "description": {
       "type": "text"
     },
@@ -39,6 +42,9 @@
       "type": "component",
       "component": "shared.accordion",
       "repeatable": true
+    },
+    "link": {
+      "type": "string"
     }
   },
   "config": {}
