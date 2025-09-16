@@ -89,6 +89,7 @@ export interface ContactUsPageQuickActionCard extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     buttontext: Schema.Attribute.String;
+    desccription: Schema.Attribute.Text;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
     url: Schema.Attribute.String;
