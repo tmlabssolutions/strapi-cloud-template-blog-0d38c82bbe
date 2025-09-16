@@ -582,7 +582,7 @@ export interface SharedText extends Struct.ComponentSchema {
     displayName: 'text';
   };
   attributes: {
-    text: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
   };
 }
 
