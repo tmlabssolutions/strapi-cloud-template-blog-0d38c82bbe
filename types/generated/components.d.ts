@@ -432,6 +432,7 @@ export interface NavigationSubMenuItem extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images' | 'files'>;
     link: Schema.Attribute.String;
     others: Schema.Attribute.Component<'navigation.sub-menu-link', true>;
+    sectionId: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -447,6 +448,7 @@ export interface NavigationSubMenuLink extends Struct.ComponentSchema {
     link: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#'>;
+    sectionId: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -519,6 +521,7 @@ export interface SharedProductSection extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
     list: Schema.Attribute.Component<'shared.text', true>;
+    sectionId: Schema.Attribute.String & Schema.Attribute.Unique;
     type: Schema.Attribute.Enumeration<['text', 'list']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'text'>;

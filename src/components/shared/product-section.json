@@ -45,6 +45,10 @@
     },
     "link": {
       "type": "string"
+    },
+    "sectionId": {
+      "type": "string",
+      "unique": true
     }
   },
   "config": {}

@@ -27,6 +27,9 @@
       "type": "component",
       "component": "navigation.sub-menu-link",
       "repeatable": true
+    },
+    "sectionId": {
+      "type": "string"
     }
   },
   "config": {}
