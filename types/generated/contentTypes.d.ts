@@ -651,7 +651,7 @@ export interface ApiDigitalDigital extends Struct.CollectionTypeSchema {
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
-    accordionTitile: Schema.Attribute.String;
+    accordionTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -907,7 +907,7 @@ export interface ApiPersonalBankPagePersonalBankPage
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
-    accordionTitile: Schema.Attribute.String;
+    accordionTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -999,7 +999,7 @@ export interface ApiSpecializedFinanceSpecializedFinance
   };
   attributes: {
     accordion: Schema.Attribute.Component<'shared.accordion', true>;
-    accordionTitile: Schema.Attribute.String;
+    accordionTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

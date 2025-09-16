@@ -34,7 +34,7 @@
       "component": "header.header-content",
       "repeatable": false
     },
-    "accordionTitile": {
+    "accordionTitle": {
       "type": "string"
     }
   }
