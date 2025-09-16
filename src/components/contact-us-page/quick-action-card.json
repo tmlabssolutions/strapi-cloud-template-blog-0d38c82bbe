@@ -34,7 +34,7 @@
         "audios"
       ]
     },
-    "desccription": {
+    "description": {
       "type": "text"
     }
   },
