@@ -34,6 +34,7 @@ export interface AboutStatscard extends Struct.ComponentSchema {
   attributes: {
     backgroundcolor: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+    textColor: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
