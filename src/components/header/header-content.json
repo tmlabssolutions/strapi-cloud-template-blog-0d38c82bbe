@@ -26,10 +26,19 @@
       ]
     },
     "fullGradient": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "buttontext": {
       "type": "string"
+    },
+    "alignleft": {
+      "type": "boolean",
+      "default": false
+    },
+    "flip": {
+      "type": "boolean",
+      "default": false
     }
   },
   "config": {}

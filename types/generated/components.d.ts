@@ -224,9 +224,11 @@ export interface HeaderHeaderContent extends Struct.ComponentSchema {
     displayName: 'HeaderContent';
   };
   attributes: {
+    alignleft: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     buttontext: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    fullGradient: Schema.Attribute.Boolean;
+    flip: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    fullGradient: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
