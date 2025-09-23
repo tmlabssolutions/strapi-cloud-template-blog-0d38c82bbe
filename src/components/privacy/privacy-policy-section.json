@@ -10,7 +10,7 @@
     },
     "subtext": {
       "type": "component",
-      "component": "shared.text",
+      "component": "privacy.text",
       "repeatable": true
     }
   },

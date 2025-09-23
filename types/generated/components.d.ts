@@ -473,8 +473,18 @@ export interface PrivacyPrivacyPolicySection extends Struct.ComponentSchema {
     displayName: 'PrivacyPolicySection';
   };
   attributes: {
-    subtext: Schema.Attribute.Component<'shared.text', true>;
+    subtext: Schema.Attribute.Component<'privacy.text', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface PrivacyText extends Struct.ComponentSchema {
+  collectionName: 'components_privacy_texts';
+  info: {
+    displayName: 'text';
+  };
+  attributes: {
+    text: Schema.Attribute.RichText;
   };
 }
 
@@ -642,6 +652,7 @@ declare module '@strapi/strapi' {
       'navigation.sub-menu-link': NavigationSubMenuLink;
       'navigation.top-section': NavigationTopSection;
       'privacy.privacy-policy-section': PrivacyPrivacyPolicySection;
+      'privacy.text': PrivacyText;
       'reports.card': ReportsCard;
       'reports.report-tabs': ReportsReportTabs;
       'shared.accordion': SharedAccordion;
