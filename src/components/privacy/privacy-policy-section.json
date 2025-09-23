@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_privacy_privacy_policy_sections",
+  "info": {
+    "displayName": "PrivacyPolicySection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtext": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

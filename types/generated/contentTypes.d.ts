@@ -958,6 +958,36 @@ export interface ApiPersonalBankingPersonalBanking
   };
 }
 
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    displayName: 'PrivacyPolicyPage';
+    pluralName: 'privacy-policy-pages';
+    singularName: 'privacy-policy-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy-page.privacy-policy-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    section: Schema.Attribute.Component<'privacy.privacy-policy-section', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiReportsPageReportsPage extends Struct.SingleTypeSchema {
   collectionName: 'reports_pages';
   info: {
@@ -1547,6 +1577,7 @@ declare module '@strapi/strapi' {
       'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
       'api::personal-bank-page.personal-bank-page': ApiPersonalBankPagePersonalBankPage;
       'api::personal-banking.personal-banking': ApiPersonalBankingPersonalBanking;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::reports-page.reports-page': ApiReportsPageReportsPage;
       'api::specialized-finance.specialized-finance': ApiSpecializedFinanceSpecializedFinance;
       'plugin::content-releases.release': PluginContentReleasesRelease;

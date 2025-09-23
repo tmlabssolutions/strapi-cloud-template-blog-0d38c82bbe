@@ -467,6 +467,17 @@ export interface NavigationTopSection extends Struct.ComponentSchema {
   };
 }
 
+export interface PrivacyPrivacyPolicySection extends Struct.ComponentSchema {
+  collectionName: 'components_privacy_privacy_policy_sections';
+  info: {
+    displayName: 'PrivacyPolicySection';
+  };
+  attributes: {
+    subtext: Schema.Attribute.Component<'shared.text', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ReportsCard extends Struct.ComponentSchema {
   collectionName: 'components_reports_cards';
   info: {
@@ -630,6 +641,7 @@ declare module '@strapi/strapi' {
       'navigation.sub-menu-item': NavigationSubMenuItem;
       'navigation.sub-menu-link': NavigationSubMenuLink;
       'navigation.top-section': NavigationTopSection;
+      'privacy.privacy-policy-section': PrivacyPrivacyPolicySection;
       'reports.card': ReportsCard;
       'reports.report-tabs': ReportsReportTabs;
       'shared.accordion': SharedAccordion;
