@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_media_gallery_tabs",
+  "info": {
+    "displayName": "GalleryTab"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "media.gallery-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

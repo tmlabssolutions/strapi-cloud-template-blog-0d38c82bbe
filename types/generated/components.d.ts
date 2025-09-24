@@ -382,6 +382,32 @@ export interface MediaArticlecard extends Struct.ComponentSchema {
   };
 }
 
+export interface MediaGalleryItem extends Struct.ComponentSchema {
+  collectionName: 'components_media_gallery_items';
+  info: {
+    displayName: 'GalleryItem';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MediaGalleryTab extends Struct.ComponentSchema {
+  collectionName: 'components_media_gallery_tabs';
+  info: {
+    displayName: 'GalleryTab';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'media.gallery-item', true>;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface NavigationBottomSection extends Struct.ComponentSchema {
   collectionName: 'components_navigation_bottom_sections';
   info: {
@@ -645,6 +671,8 @@ declare module '@strapi/strapi' {
       'leadership.leadershipcard': LeadershipLeadershipcard;
       'leadership.leadershiptab': LeadershipLeadershiptab;
       'media.articlecard': MediaArticlecard;
+      'media.gallery-item': MediaGalleryItem;
+      'media.gallery-tab': MediaGalleryTab;
       'navigation.bottom-section': NavigationBottomSection;
       'navigation.navigation-item': NavigationNavigationItem;
       'navigation.sub-menu': NavigationSubMenu;
