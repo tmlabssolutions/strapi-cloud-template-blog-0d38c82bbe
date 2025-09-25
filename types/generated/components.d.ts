@@ -374,6 +374,7 @@ export interface MediaArticlecard extends Struct.ComponentSchema {
     displayName: 'articlecard';
   };
   attributes: {
+    article: Schema.Attribute.RichText;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String & Schema.Attribute.DefaultTo<'News'>;
