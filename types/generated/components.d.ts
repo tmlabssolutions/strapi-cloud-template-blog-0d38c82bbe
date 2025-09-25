@@ -382,6 +382,28 @@ export interface MediaArticlecard extends Struct.ComponentSchema {
   };
 }
 
+export interface MediaAwardCategory extends Struct.ComponentSchema {
+  collectionName: 'components_media_award_categories';
+  info: {
+    displayName: 'AwardCategory';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'media.awards-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MediaAwardsItem extends Struct.ComponentSchema {
+  collectionName: 'components_media_awards_items';
+  info: {
+    displayName: 'AwardsItem';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface MediaGalleryItem extends Struct.ComponentSchema {
   collectionName: 'components_media_gallery_items';
   info: {
@@ -671,6 +693,8 @@ declare module '@strapi/strapi' {
       'leadership.leadershipcard': LeadershipLeadershipcard;
       'leadership.leadershiptab': LeadershipLeadershiptab;
       'media.articlecard': MediaArticlecard;
+      'media.award-category': MediaAwardCategory;
+      'media.awards-item': MediaAwardsItem;
       'media.gallery-item': MediaGalleryItem;
       'media.gallery-tab': MediaGalleryTab;
       'navigation.bottom-section': NavigationBottomSection;

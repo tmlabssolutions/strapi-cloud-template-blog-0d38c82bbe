@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_media_awards_items",
+  "info": {
+    "displayName": "AwardsItem"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
