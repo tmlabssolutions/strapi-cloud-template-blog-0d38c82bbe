@@ -474,6 +474,34 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAwardsPageAwardsPage extends Struct.SingleTypeSchema {
+  collectionName: 'awards_pages';
+  info: {
+    displayName: 'AwardsPage';
+    pluralName: 'awards-pages';
+    singularName: 'awards-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Component<'media.award-category', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::awards-page.awards-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBusinessBankingBusinessBanking
   extends Struct.SingleTypeSchema {
   collectionName: 'business_bankings';
@@ -1590,6 +1618,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::awards-page.awards-page': ApiAwardsPageAwardsPage;
       'api::business-banking.business-banking': ApiBusinessBankingBusinessBanking;
       'api::business.business': ApiBusinessBusiness;
       'api::category.category': ApiCategoryCategory;
