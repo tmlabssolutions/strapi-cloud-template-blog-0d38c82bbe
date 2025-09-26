@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_locator_search_types_items",
+  "info": {
+    "displayName": "SearchTypesItem"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "enumeration",
+      "enum": [
+        "atms",
+        "agents",
+        "offices"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "locations": {
+      "type": "component",
+      "component": "locator.locations",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

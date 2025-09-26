@@ -889,6 +889,37 @@ export interface ApiLeadershipPageLeadershipPage
   };
 }
 
+export interface ApiLocatorPageLocatorPage extends Struct.SingleTypeSchema {
+  collectionName: 'locator_pages';
+  info: {
+    displayName: 'LocatorPage';
+    pluralName: 'locator-pages';
+    singularName: 'locator-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::locator-page.locator-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    searchTypesItems: Schema.Attribute.Component<
+      'locator.search-types-item',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMediaPageMediaPage extends Struct.SingleTypeSchema {
   collectionName: 'media_pages';
   info: {
@@ -1631,6 +1662,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::leadership-page.leadership-page': ApiLeadershipPageLeadershipPage;
+      'api::locator-page.locator-page': ApiLocatorPageLocatorPage;
       'api::media-page.media-page': ApiMediaPageMediaPage;
       'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
       'api::personal-bank-page.personal-bank-page': ApiPersonalBankPagePersonalBankPage;

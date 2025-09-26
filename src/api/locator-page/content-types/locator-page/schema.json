@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "locator_pages",
+  "info": {
+    "singularName": "locator-page",
+    "pluralName": "locator-pages",
+    "displayName": "LocatorPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "searchTypesItems": {
+      "type": "component",
+      "component": "locator.search-types-item",
+      "repeatable": true
+    }
+  }
+}
