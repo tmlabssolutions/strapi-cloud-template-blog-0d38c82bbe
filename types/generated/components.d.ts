@@ -451,11 +451,11 @@ export interface MediaArticlecard extends Struct.ComponentSchema {
   };
   attributes: {
     article: Schema.Attribute.RichText;
+    date: Schema.Attribute.Date;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String & Schema.Attribute.DefaultTo<'News'>;
     title: Schema.Attribute.String;
-    type: Schema.Attribute.String;
   };
 }
 

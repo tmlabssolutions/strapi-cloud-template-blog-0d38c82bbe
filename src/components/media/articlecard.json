@@ -25,11 +25,11 @@
     "description": {
       "type": "text"
     },
-    "type": {
-      "type": "string"
-    },
     "article": {
       "type": "richtext"
+    },
+    "date": {
+      "type": "date"
     }
   },
   "config": {}
