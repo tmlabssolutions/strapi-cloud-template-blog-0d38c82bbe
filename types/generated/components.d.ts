@@ -419,6 +419,31 @@ export interface LeadershipLeadershiptab extends Struct.ComponentSchema {
   };
 }
 
+export interface LocatorLocations extends Struct.ComponentSchema {
+  collectionName: 'components_locator_locations';
+  info: {
+    displayName: 'Locations';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    latitude: Schema.Attribute.Decimal;
+    longitude: Schema.Attribute.Decimal;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LocatorSearchTypesItem extends Struct.ComponentSchema {
+  collectionName: 'components_locator_search_types_items';
+  info: {
+    displayName: 'SearchTypesItem';
+  };
+  attributes: {
+    key: Schema.Attribute.Enumeration<['atms', 'agents', 'offices']>;
+    label: Schema.Attribute.String;
+    locations: Schema.Attribute.Component<'locator.locations', true>;
+  };
+}
+
 export interface MediaArticlecard extends Struct.ComponentSchema {
   collectionName: 'components_media_articlecards';
   info: {
@@ -769,6 +794,8 @@ declare module '@strapi/strapi' {
       'home.vision-section': HomeVisionSection;
       'leadership.leadershipcard': LeadershipLeadershipcard;
       'leadership.leadershiptab': LeadershipLeadershiptab;
+      'locator.locations': LocatorLocations;
+      'locator.search-types-item': LocatorSearchTypesItem;
       'media.articlecard': MediaArticlecard;
       'media.award-category': MediaAwardCategory;
       'media.awards-item': MediaAwardsItem;
