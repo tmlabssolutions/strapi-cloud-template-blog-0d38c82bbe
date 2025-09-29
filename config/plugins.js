@@ -21,7 +21,7 @@ module.exports = ({ env }) => ({
         port: 465,
         auth: {
           user: env('GMAIL_SMTP_NAME'),
-          pass: env('GMAIL_SMTP_PASS'),
+          pass: env('GMAIL_SMTP_PASSWORD'),
         },
       },
       settings: {
