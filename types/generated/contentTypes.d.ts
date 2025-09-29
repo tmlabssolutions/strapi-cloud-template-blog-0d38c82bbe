@@ -548,6 +548,7 @@ export interface ApiBusinessBusiness extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'shared.faqcard', true>;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
     hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -683,6 +684,7 @@ export interface ApiDigitalDigital extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'shared.faqcard', true>;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
     hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -714,6 +716,7 @@ export interface ApiFeaturePageFeaturePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'shared.faqcard', true>;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
     hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -756,6 +759,34 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     socials: Schema.Attribute.Component<'footer.socials-item', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormForm extends Struct.CollectionTypeSchema {
+  collectionName: 'forms';
+  info: {
+    displayName: 'form';
+    pluralName: 'forms';
+    singularName: 'form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    form: Schema.Attribute.Component<'forms.form', false>;
+    hero: Schema.Attribute.Component<'header.header-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::form.form'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -967,6 +998,7 @@ export interface ApiPersonalBankPagePersonalBankPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'shared.faqcard', true>;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
     hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1089,6 +1121,7 @@ export interface ApiSpecializedFinanceSpecializedFinance
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'shared.faqcard', true>;
     featureCards: Schema.Attribute.Component<'shared.product-section', true>;
     hero: Schema.Attribute.Component<'header.header-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1627,6 +1660,7 @@ declare module '@strapi/strapi' {
       'api::digital.digital': ApiDigitalDigital;
       'api::feature-page.feature-page': ApiFeaturePageFeaturePage;
       'api::footer.footer': ApiFooterFooter;
+      'api::form.form': ApiFormForm;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;

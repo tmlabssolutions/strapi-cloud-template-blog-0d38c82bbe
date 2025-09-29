@@ -36,6 +36,11 @@
       "type": "component",
       "component": "header.header-content",
       "repeatable": false
+    },
+    "faq": {
+      "type": "component",
+      "component": "shared.faqcard",
+      "repeatable": true
     }
   }
 }

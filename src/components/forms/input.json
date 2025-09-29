@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_forms_inputs",
+  "info": {
+    "displayName": "input"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "tel",
+        "number",
+        "textarea",
+        "date",
+        "checkbox",
+        "radio",
+        "file",
+        "select",
+        "checkboxgroup",
+        "radiogroup"
+      ]
+    },
+    "options": {
+      "type": "component",
+      "component": "forms.option",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

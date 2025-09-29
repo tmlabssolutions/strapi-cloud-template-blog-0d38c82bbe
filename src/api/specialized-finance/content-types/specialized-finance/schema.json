@@ -36,6 +36,11 @@
     },
     "accordionTitle": {
       "type": "string"
+    },
+    "faq": {
+      "type": "component",
+      "component": "shared.faqcard",
+      "repeatable": true
     }
   }
 }

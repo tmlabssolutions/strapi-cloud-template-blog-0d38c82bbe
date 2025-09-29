@@ -28,6 +28,11 @@
       "type": "component",
       "component": "shared.product-section",
       "repeatable": true
+    },
+    "faq": {
+      "type": "component",
+      "component": "shared.faqcard",
+      "repeatable": true
     }
   }
 }

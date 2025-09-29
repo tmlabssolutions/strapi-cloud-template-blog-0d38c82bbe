@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_forms_forms",
+  "info": {
+    "displayName": "form"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "inputs": {
+      "type": "component",
+      "component": "forms.input",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

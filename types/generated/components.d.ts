@@ -218,6 +218,57 @@ export interface FooterSocialsItem extends Struct.ComponentSchema {
   };
 }
 
+export interface FormsForm extends Struct.ComponentSchema {
+  collectionName: 'components_forms_forms';
+  info: {
+    displayName: 'form';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    inputs: Schema.Attribute.Component<'forms.input', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface FormsInput extends Struct.ComponentSchema {
+  collectionName: 'components_forms_inputs';
+  info: {
+    displayName: 'input';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    options: Schema.Attribute.Component<'forms.option', true>;
+    placeholder: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'text',
+        'email',
+        'tel',
+        'number',
+        'textarea',
+        'date',
+        'checkbox',
+        'radio',
+        'file',
+        'select',
+        'checkboxgroup',
+        'radiogroup',
+      ]
+    >;
+  };
+}
+
+export interface FormsOption extends Struct.ComponentSchema {
+  collectionName: 'components_forms_options';
+  info: {
+    displayName: 'option';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface HeaderHeaderContent extends Struct.ComponentSchema {
   collectionName: 'components_header_header_contents';
   info: {
@@ -570,6 +621,28 @@ export interface SharedAccordion extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaqcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqcards';
+  info: {
+    displayName: 'faqcard';
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'shared.accordion', true>;
+    description: Schema.Attribute.Component<'shared.faqdescription', false>;
+  };
+}
+
+export interface SharedFaqdescription extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqdescriptions';
+  info: {
+    displayName: 'faqdescription';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -681,6 +754,9 @@ declare module '@strapi/strapi' {
       'footer.footer-details': FooterFooterDetails;
       'footer.footer-option': FooterFooterOption;
       'footer.socials-item': FooterSocialsItem;
+      'forms.form': FormsForm;
+      'forms.input': FormsInput;
+      'forms.option': FormsOption;
       'header.header-content': HeaderHeaderContent;
       'home.action-item': HomeActionItem;
       'home.ai-assitant': HomeAiAssitant;
@@ -709,6 +785,8 @@ declare module '@strapi/strapi' {
       'reports.card': ReportsCard;
       'reports.report-tabs': ReportsReportTabs;
       'shared.accordion': SharedAccordion;
+      'shared.faqcard': SharedFaqcard;
+      'shared.faqdescription': SharedFaqdescription;
       'shared.media': SharedMedia;
       'shared.product-section': SharedProductSection;
       'shared.quote': SharedQuote;
