@@ -18,15 +18,15 @@ module.exports = ({ env }) => ({
       provider: 'nodemailer',
       providerOptions: {
         host: 'smtp-relay.brevo.com',
-        port: 587,
+        port: 465,
         auth: {
           user: env('BREVO_SMTP_USER'),
           pass: env('BREVO_SMTP_PASS'),
         },
       },
       settings: {
-        defaultFrom: 'your-email@domain.com',
-        defaultReplyTo: 'your-email@domain.com',
+        defaultFrom: 'info@tmlabs.xyz',
+        defaultReplyTo: 'info@tmlabs.xyz',
       },
     },
   },
