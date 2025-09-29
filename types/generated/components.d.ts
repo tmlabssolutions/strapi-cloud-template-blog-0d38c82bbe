@@ -663,7 +663,6 @@ export interface SharedFaqdescription extends Struct.ComponentSchema {
     displayName: 'faqdescription';
   };
   attributes: {
-    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
