@@ -17,16 +17,16 @@ module.exports = ({ env }) => ({
     config: {
       provider: 'nodemailer',
       providerOptions: {
-        host: 'smtp-relay.brevo.com',
+        host: 'smtp.gmail.com',
         port: 465,
         auth: {
-          user: env('BREVO_SMTP_USER'),
-          pass: env('BREVO_SMTP_PASS'),
+          user: env('GMAIL_SMTP_NAME'),
+          pass: env('GMAIL_SMTP_PASS'),
         },
       },
       settings: {
-        defaultFrom: 'info@tmlabs.xyz',
-        defaultReplyTo: 'info@tmlabs.xyz',
+        defaultFrom: env('GMAIL_SMTP_NAME'),
+        defaultReplyTo: env('GMAIL_SMTP_NAME'),
       },
     },
   },
