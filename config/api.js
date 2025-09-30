@@ -5,7 +5,7 @@ module.exports = {
     withCount: true,
   },
   graphql: {
-    maxLimit: 50,
-    defaultLimit: 50,
+    maxLimit: 500,
+    defaultLimit: 500,
   },
 };
