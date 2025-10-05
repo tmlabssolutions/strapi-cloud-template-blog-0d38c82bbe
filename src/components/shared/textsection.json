@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_textsections",
+  "info": {
+    "displayName": "textsection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

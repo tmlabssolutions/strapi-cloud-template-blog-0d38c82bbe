@@ -41,6 +41,11 @@
       "type": "component",
       "component": "shared.faqcard",
       "repeatable": true
+    },
+    "textsection": {
+      "type": "component",
+      "component": "shared.textsection",
+      "repeatable": true
     }
   }
 }

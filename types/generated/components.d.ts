@@ -759,6 +759,17 @@ export interface SharedText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTextsection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_textsections';
+  info: {
+    displayName: 'textsection';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -820,6 +831,7 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.text': SharedText;
+      'shared.textsection': SharedTextsection;
     }
   }
 }
