@@ -39,6 +39,16 @@
     "flip": {
       "type": "boolean",
       "default": false
+    },
+    "mobileimage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   },
   "config": {}

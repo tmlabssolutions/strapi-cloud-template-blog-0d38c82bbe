@@ -282,6 +282,9 @@ export interface HeaderHeaderContent extends Struct.ComponentSchema {
     fullGradient: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
+    mobileimage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
