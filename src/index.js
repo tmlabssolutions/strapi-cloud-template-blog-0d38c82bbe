@@ -14,7 +14,7 @@ module.exports = {
     const extension = () => ({
       typeDefs: `
         type Mutation {
-          sendEmail(to: String!, subject: String!, text: String!): Boolean
+          sendEmail(to: String!, subject: String!, text: String!, replyTo: String): Boolean
         }
       `,
       resolvers: {
@@ -26,6 +26,7 @@ module.exports = {
                   to: args.to,
                   subject: args.subject,
                   text: args.text,
+                  replyTo: args.replyTo ?? args.to,
                 });
                 strapi.log.info(`Email sent successfully to: ${args.to}`);
                 return true;
